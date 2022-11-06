@@ -2,7 +2,7 @@
    <ul class="authors-container">
       <li class="author-container" v-for="movie in uniqueAuthor" :key="movie">
       <router-link :to="{name:'reviews'}" class="author-container__link" @click="setName(movie)">
-        <h2 class="author-container__title">{{movie.byline}}</h2>
+        <h2 class="author-container__title">{{movie}}</h2>
       </router-link>
       </li>
    </ul>
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     setName(author) {
-      localStorage.name = author.byline
+      localStorage.name = author
     }
   },
   

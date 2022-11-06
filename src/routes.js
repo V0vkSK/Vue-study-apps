@@ -3,6 +3,7 @@ import vHomePage from "@/Pages/vHomePage.vue";
 import vMoviesList from "./Pages/vMovies/vMoviesList";
 import vAuthorsList from "./Pages/vMovies/vAuthorsList";
 import vReviews from "./Pages/vMovies/vReviews";
+import vSearch from "./Pages/vMovies/vSearch";
 import vNotFound from "./components/vNotFound";
 
 const router = createRouter({
@@ -23,6 +24,11 @@ const router = createRouter({
       name: "reviews",
       component: vReviews,
       props: true,
+    },
+    {
+      path: "/search",
+      name: "search",
+      component: vSearch,
     },
     {
       path: "/authors",

@@ -2,6 +2,7 @@
   <div class="drop-container" v-if="isVisible">
     <router-link class="link" :to="{name:'movies'}" @click="dropMenuClose">Movies</router-link>
     <router-link class="link" :to="{name:'authors'}" @click="dropMenuClose">Authors</router-link>
+    <router-link class="link" :to="{name:'search'}" @click="dropMenuClose">Search</router-link>
     
 
   </div>
