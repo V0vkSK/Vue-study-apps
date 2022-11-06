@@ -57,6 +57,7 @@ export default {
   display: flex;
   flex-direction: column;
 		&__item {
+      list-style: none;
 		}
 
 		&__title {

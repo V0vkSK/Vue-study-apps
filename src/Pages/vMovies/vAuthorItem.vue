@@ -1,9 +1,10 @@
 <template>
-  
-      <li class="author-container" v-for="author in authors" :key="author.index">
-      <router-link :to="{name:'reviews'}" class="author-container__link" @click="setName(author)">
-        <h2 class="author-container__title">{{author.display_name}}</h2>
+  <!-- <p>{{uniqueAuthor}}</p> -->
+      <li class="author-container" v-for="movie in movies" :key="movie">
+      <router-link :to="{name:'reviews'}" class="author-container__link" @click="setName(movie)">
+        <h2 class="author-container__title">{{movie.byline}}</h2>
       </router-link>
+      <p>{{uniqueAuthor}}</p>
       </li>
   
 </template>
@@ -15,15 +16,20 @@ import { mapState } from 'vuex';
   name: 'vAuthorsItem',
   computed: {
     ...mapState([
-        'authors'
+        'movies'
       ])
     },
+    uniqueAuthor() {
+     let arr = this.movies
+     const unique = [...new Set(arr.map(item => item.byline))];
+     console.log(unique);
+     return unique
+   },
   methods: {
-    setName(author) {
-      localStorage.name = author.display_name
-      console.log(author.display_name);
-      
-    }
+    setName(movie) {
+      localStorage.name = movie.byline
+      console.log(movie.byline);
+    },
   } 
   }
 </script>

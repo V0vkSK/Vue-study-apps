@@ -36,7 +36,7 @@ import { mapGetters } from 'vuex';
     ])
   },
  mounted() {
-    this.$store.dispatch('GET_AUTHORS')  
+    // this.$store.dispatch('GET_AUTHORS')  
     this.$store.dispatch('GET_MOVIES')  
     }
 

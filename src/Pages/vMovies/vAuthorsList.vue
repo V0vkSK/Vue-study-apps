@@ -1,17 +1,21 @@
 <template>
-  <ul class="authors-container">
-    <vAuthorItem/>
-  </ul>
+   <ul class="authors-container">
+      <li class="author-container" v-for="movie in uniqueAuthor" :key="movie">
+      <router-link :to="{name:'reviews'}" class="author-container__link" @click="setName(movie)">
+        <h2 class="author-container__title">{{movie.byline}}</h2>
+      </router-link>
+      </li>
+   </ul>
   </template>
 
 <script>
 import { mapState } from 'vuex';
-import vAuthorItem from './vAuthorItem.vue'
+// import vAuthorItem from './vAuthorItem.vue'
 
 export default {
   name: 'vAuthorsList',
   components: {
-    vAuthorItem
+    // vAuthorItem
   },
   
   computed: {
@@ -19,17 +23,17 @@ export default {
       'movies',
       'authors' 
     ]),
-            // method Set with Massive of Object
-    // uniqueAuthor() {
-    //   let arr = this.movies
-    //   const unique = [...new Set(arr.map(item => item.byline))];
-    //   return unique
-    // }
+  //           // method Set with Massive of Object
+    uniqueAuthor() {
+      let arr = this.movies
+      const unique = [...new Set(arr.map(item => item.byline))];
+      return unique
+    }
   },
   methods: {
-    // setName(author) {
-    //   localStorage.name = author
-    // }
+    setName(author) {
+      localStorage.name = author.byline
+    }
   },
   
 }
@@ -37,9 +41,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-li{
-  list-style: none;
-}
 .authors-container{
   position: relative;
   display: flex;
@@ -48,6 +49,51 @@ li{
   justify-content: space-between;
   width: 100%;
   
+}
+.author-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  margin: 0 5px 15px 15px;
+  width: 255px;
+  box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    &__link{
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+    }
+		&__title {
+      color: rgb(96, 95, 95);
+      font-size: 25px;
+      margin-bottom: 5px;
+
+        &:hover, &:focus{
+        color:rgb(0, 191, 255)
+    }
+		}
+
+		&__img {
+      margin-bottom: 5px;
+      width: 100%;
+		}
+
+		&__description {
+      margin-bottom: 5px;
+		}
+    &__author{
+      // position: absolute;
+      // bottom: 5px;
+      // left: 10px;
+      margin-top: 5px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      color: green;
+      &:hover, &:focus{
+        color: lightgreen;
+      }
+    }
 }
 .btn-link{
   position: fixed;
