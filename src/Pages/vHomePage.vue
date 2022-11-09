@@ -13,9 +13,8 @@
 
         <section class="contact">
           <div class="contact-info">
-            <svg class="contact-info__icon">
-              <use href="../components//assets/home.svg"></use>
-            </svg>
+            <img class="contact-info__icon" src="../components/assets/home.svg"/>
+            
             <h2 class="contact-info__title">
               Contact <br />
               information
@@ -41,9 +40,9 @@
             </li>
           </ul>
           <div class="languages-info">
-            <svg class="languages-info__icon">
-              <use href="../components/assets/420px-Globe_icon.svg.png"></use>
-            </svg>
+            <img class="languages-info__icon"
+              src="../components/assets/420px-Globe_icon.png"/>
+            
             <h2 class="languages-info__title">Languages</h2>
           </div>
           <ul class="lang">
@@ -85,16 +84,14 @@
             </li>
           </ul>
           <div class="about-me">
-            <svg class="about-me__icon">
-              <use href="../components/assets/info.svg"></use>
-            </svg>
+            <img class="about-me__icon" src="../components/assets/info.svg" style="width:40px;height:40px"/>
             <h2 class="about-me__title">About me</h2>
           </div>
           <div class="contact__line"></div>
           <p class="text">
             I am looking for a position of a Junior Front-end developer. I have
-            done a few study projects using Vue.js and React.js including
-            landing website, adaptive, animation etc.
+            done a few study projects using Vue.js and React.js.
+            Landing websites, adaptive etc.
           </p>
         </section>
       </div>

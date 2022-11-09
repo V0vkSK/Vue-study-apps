@@ -4,14 +4,14 @@ import Vuex from "vuex";
 let store = new Vuex.Store({
   state: {
     movies: {},
-    authors: {},
+    author: {},
   },
   mutations: {
     SET_MOVIES: (state, payload) => {
       state.movies = payload;
     },
-    SET_AUTHORS: (state, payload) => {
-      state.authors = payload;
+    SET_AUTHOR: (state, payload) => {
+      state.author = payload;
     },
   },
   actions: {
@@ -27,12 +27,13 @@ let store = new Vuex.Store({
       }
     },
     // axios.get(`${API_BASE_URL}/api/products`    Использование шаблонной строки
-    async GET_AUTHORS({ commit }) {
+    async GET_AUTHOR({ commit }) {
+      // const searchName = localStorage.searchData;
       try {
         const { data } = await axios.get(
-          "https://api.nytimes.com/svc/movies/v2/critics/all.json?api-key=Qv3Uw8MK4moKsVcaupYp3sRHa7QuXmtl"
+          "https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=scott&api-key=Qv3Uw8MK4moKsVcaupYp3sRHa7QuXmtl"
         );
-        commit("SET_AUTHORS", data.results);
+        commit("SET_AUTHOR", data.results);
       } catch (error) {
         console.log(error);
         return error;

@@ -17,7 +17,6 @@ import { mapGetters } from 'vuex';
 
   data() {
     return {
-      
     }
   },
     
@@ -30,15 +29,18 @@ import { mapGetters } from 'vuex';
 
   methods: {
     dropMenuClose() { 
+     console.log(`dropmenuClosed DropMenu before: ${this.isVisible}`);
       return this.$emit('isvisible', '');
     },
     ...mapGetters([
       'AUTHORS'
     ])
   },
- mounted() {
+  mounted() {
+    
     // this.$store.dispatch('GET_AUTHORS')  
-    this.$store.dispatch('GET_MOVIES')  
+   this.$store.dispatch('GET_MOVIES')  
+    this.$store.dispatch('GET_AUTHOR')
     }
 
 }

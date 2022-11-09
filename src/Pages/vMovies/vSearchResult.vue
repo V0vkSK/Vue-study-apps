@@ -16,24 +16,26 @@
 import { mapState } from 'vuex';
 
 export default {
-  name: 'vReviews',
+  name: 'vSearchResult',
   data() {
     return {
-      nameAuthor : localStorage.name
+      nameAuthor : localStorage.searchData
     }
   },
   computed: {
     ...mapState([
-      'movies'
+      'movies',
+      'author'
     ]),
-    // uniqueAuthor() {
-    //   let arr =  this.movies 
-    //   // const unique = [...new Set(arr.map(item => item.byline))];
-    //   const reviews = arr.filter(el => el.byline === this.nameAuthor)
-    //   return reviews
-    //   // return unique
-    // },
-  }
+    reviewsOfAuthor() {
+      let arr =  this.movies 
+      // const unique = [...new Set(arr.map(item => item.byline))];
+      const reviews = arr.filter(el => el.byline === this.nameAuthor)
+      return reviews
+      // return unique
+    },
+  },
+  
   }
 </script>
 

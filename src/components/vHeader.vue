@@ -4,8 +4,6 @@
             <vLogo/>
             <nav>
               <router-link class="link" :to="{name:'home'}" @click="dropmenuClosed">Home</router-link>
-              <!-- <router-link class="link" to="/counter" @click="dropmenuClosed">Counter</router-link>
-              <router-link class="link" :to="{name:'todos'}" @click="dropmenuClosed">TODOs</router-link> -->
               <div class="drop-container">
                 <button type="button" class="link isActive" @click="dropmenu">Movies reviews</button>
                 <vDropMenu 
@@ -14,8 +12,7 @@
                 @isvisible="dropmenuClosed"
                 />
               </div>
-              <!-- <router-link class="link" to="/tests" @click="dropmenuClosed">Tests</router-link> -->
-              
+                      
             </nav>
         </div>
     </header>
@@ -38,9 +35,11 @@ import vLogo from './vLogo.vue';
   
   methods: {
     dropmenu() {
+      console.log(`dropmenu Header before: ${this.isVisible}`);
       return this.isVisible = !this.isVisible
     },  
     dropmenuClosed() {
+      console.log(`dropmenuClosed Header before: ${this.isVisible}`);
       return this.isVisible = false
     },  
     

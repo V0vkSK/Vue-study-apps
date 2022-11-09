@@ -21,7 +21,7 @@ export default {
   computed: {
     ...mapState([
       'movies',
-      'authors' 
+      // 'authors' 
     ]),
   //           // method Set with Massive of Object
     uniqueAuthor() {

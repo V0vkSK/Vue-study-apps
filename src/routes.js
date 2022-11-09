@@ -4,6 +4,7 @@ import vMoviesList from "./Pages/vMovies/vMoviesList";
 import vAuthorsList from "./Pages/vMovies/vAuthorsList";
 import vReviews from "./Pages/vMovies/vReviews";
 import vSearch from "./Pages/vMovies/vSearch";
+import vSearchResult from "./Pages/vMovies/vSearchResult";
 import vNotFound from "./components/vNotFound";
 
 const router = createRouter({
@@ -29,6 +30,11 @@ const router = createRouter({
       path: "/search",
       name: "search",
       component: vSearch,
+    },
+    {
+      path: "/search_res",
+      name: "searchResult",
+      component: vSearchResult,
     },
     {
       path: "/authors",
