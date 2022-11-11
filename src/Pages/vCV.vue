@@ -15,7 +15,7 @@
 div{
   position: relative;
   width: 1100px;
-  height: 1035px;
+  height: 1060px;
 }
 .frame{
   position: absolute;

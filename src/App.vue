@@ -4,6 +4,7 @@
         <main>
         <vContent/>
         </main> 
+        <vFooter/>
       </div>
 </template>
 
@@ -11,12 +12,14 @@
 
 import vHeader from './components/vHeader.vue';
 import vContent from './components/vContent.vue';
+import vFooter from './components/vFooter.vue';
 
 export default {
   name: 'App',
   components: {
     vHeader,
-    vContent
+    vContent,
+    vFooter
  },
 }
 </script>
@@ -34,6 +37,9 @@ export default {
 html{
   min-height: 100vh;
   box-sizing: border-box;
+}
+main{
+  min-height: 100vh;
 }
 
 *,
