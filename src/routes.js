@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import vHomePage from "@/Pages/vHomePage.vue";
+import vHomePage from "./Pages/vHomePage";
+import vCV from "./Pages/vCV";
 import vMoviesList from "./Pages/vMovies/vMoviesList";
 import vAuthorsList from "./Pages/vMovies/vAuthorsList";
 import vReviews from "./Pages/vMovies/vReviews";
@@ -14,6 +15,11 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: vHomePage,
+    },
+    {
+      path: "/cv",
+      name: "cv",
+      component: vCV,
     },
     {
       path: "/movies",

@@ -4,6 +4,7 @@
             <vLogo/>
             <nav>
               <router-link class="link" :to="{name:'home'}" @click="dropmenuClosed">Home</router-link>
+              <router-link class="link" :to="{name:'cv'}" @click="dropmenuClosed">My CV</router-link>
               <div class="drop-container">
                 <button type="button" class="link isActive" @click="dropmenu">Movies reviews</button>
                 <vDropMenu 

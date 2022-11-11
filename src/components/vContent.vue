@@ -15,7 +15,7 @@
 
 <style lang="scss" scoped>
 .container-content{
-    
+    // position: relative;
     display: flex;
     flex-direction: column;
 //     align-content: center;
