@@ -2,8 +2,8 @@
   <div class="home-page">
     <h1>Home Page</h1>
     <div class="home-container">
-      <p class="home-container__descr">Bootstrap in fact is bullshit. For me.</p>
-      <p>for lazy... I can better</p>
+      <p class="home-container__descr">Bootstrap in fact is bullshit.. for me.. for lazy... I can better</p>
+      
     </div>
   </div>
 </template>
