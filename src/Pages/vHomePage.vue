@@ -2,7 +2,7 @@
   <div class="home-page">
     <h1>Home Page</h1>
     <div class="home-container">
-      <p class="home-container__descr">Bootstrap in fact is bullshit.. for me... Sorry... It`s for lazy... I can better"</p>
+      <p class="home-container__descr">In this application, the emphasis is on functionality and not on beauty and adaptability.</p>
       
     </div>
   </div>
@@ -26,8 +26,9 @@
   flex-direction: column;
   padding: 20px 10px;
   margin: 20px 5px 15px 300px;
-  width: 255px;
+  width: 400px;
   height: fit-content;
+  font-size: 30px;
   box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.19);
   &__descr{
     padding: 10px;

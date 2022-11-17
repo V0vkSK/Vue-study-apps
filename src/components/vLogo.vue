@@ -15,7 +15,7 @@
   text-decoration: none;
   font-size: 30px;
   display: block;
-  color: #fff;
+  color: #7481cf;
   margin-right: 150px;
   padding-left: 15px;
   span{

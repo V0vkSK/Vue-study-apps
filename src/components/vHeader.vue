@@ -71,7 +71,7 @@ nav{
 }
 .link{
  text-decoration: none;
-  background: #13b00b;
+  background: #2071ce;
   color: #fff;
   border: 0;
   padding: 8px 16px;
@@ -80,8 +80,8 @@ nav{
   margin-right: 20px;
   cursor: pointer;
     &:hover{
-      background: #0a4e25;
-      color: rgb(0, 191, 255);
+      background: #0a144e;
+      color: rgb(64, 205, 252);
     }
 }
 .drop-container{
@@ -99,7 +99,7 @@ nav{
   font-size: 16px;
   border-radius: 5px;
   margin-right: 20px;
-  background: #0a4e25;
+  background: #0a144e;
 color:rgb(0, 191, 255)  
 }
 </style>

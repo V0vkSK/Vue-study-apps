@@ -61,11 +61,11 @@ export default {
 		}
 
 		&__title {
-      color: #13b00b;
+      color:  #3f58e3 ;
     text-decoration: none;
     margin-left: 40px;
       &:hover, &:focus{
-        color: rgb(0,191,255);
+        color:rgb(0,191,255);
         text-decoration: none;}
     }
 }

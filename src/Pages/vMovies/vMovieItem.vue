@@ -75,9 +75,9 @@ export default {
       display: flex;
       justify-content: center;
       font-size: 20px;
-      color: green;
+      color: #3f58e3;
       &:hover, &:focus{
-        color: lightgreen;
+        color: rgb(0,191,255);
       }
     }
 }

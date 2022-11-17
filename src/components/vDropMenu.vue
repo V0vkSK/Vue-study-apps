@@ -56,11 +56,11 @@ import { mapGetters } from 'vuex';
   font-size: 16px;
   border: 0;
   border-radius: 5px;
-  background-color: #13b00b;
+  background-color: #2071ce;
   color: #fff;
 
   &:hover, &:focus {
-     background: #0a4e25;
+     background: #0a144e;
   color: rgb(0, 191, 255);
   }
 }
