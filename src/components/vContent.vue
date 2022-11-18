@@ -34,10 +34,10 @@
         max-width:1100px
     }
     @media (max-width:1100px) {
-            max-width:1100px;
+            max-width:950px;
     }
-// @media (max-width:767px) {
-//         max-width:750px
+// @media (max-width:900px) {
+//         max-width:767px
 // }
 // @media (max-width:767px) {
 //         max-width:none;

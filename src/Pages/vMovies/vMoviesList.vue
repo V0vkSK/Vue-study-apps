@@ -40,18 +40,21 @@ li{
   width: 100%;
   
 }
-.btn-link{
-  position: fixed;
-  bottom: 30px;
-  right: 250px;
-  display: block;
-  text-decoration: none;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5%;
-  background-color: #2071ce;
-  color: #fff;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.btn-link{ display: none}
+@media (min-width:1800px){
+  .btn-link{
+    position:fixed;
+    bottom: 30px;
+    right: 250px;
+    display: block;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5%;
+    background-color: #2071ce;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 }
 
 </style>
