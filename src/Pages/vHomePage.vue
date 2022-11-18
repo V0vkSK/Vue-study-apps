@@ -18,14 +18,14 @@
 .home-page{
   display: flex;
   flex-direction: column;
-
+align-items: center;
 }
 .home-container {
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 20px 10px;
-  margin: 20px 5px 15px 300px;
+  margin-top: 30px;
   width: 400px;
   height: fit-content;
   font-size: 30px;

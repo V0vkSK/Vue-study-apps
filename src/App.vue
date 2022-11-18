@@ -9,6 +9,19 @@
 </template>
 
 <script>
+// Check mobile or PC---------------
+
+import MobileDetect from 'mobile-detect';
+const md = new MobileDetect(window.navigator.userAgent);
+const isMobile = md.mobile() != null;
+
+if (isMobile) {
+  document.body.classList.add('_touch');
+} else {
+  document.body.classList.add('_pc');
+}
+
+//-----------------------------------
 
 import vHeader from './components/vHeader.vue';
 import vContent from './components/vContent.vue';
@@ -23,7 +36,6 @@ export default {
  },
 }
 </script>
-  <!-- @import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic); -->
 <style> 
 #app {
   position: relative;
@@ -34,9 +46,11 @@ export default {
   color: #2c3e50;
   margin: 0;
 }
-html{
-  min-height: 100vh;
+html,body{
+  height: 100%;
   box-sizing: border-box;
+  line-height: 1;
+
 }
 main{
   min-height: 100vh;
@@ -48,6 +62,9 @@ main{
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+li{
+  list-style: none;
 }
 router-link{
   text-decoration: none;
