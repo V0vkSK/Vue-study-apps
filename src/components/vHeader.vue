@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <div class="container">
+        <div class="header-container">
             <vLogo/>
             <nav>
               <router-link class="link" :to="{name:'home'}" @click="dropmenuClosed">Home</router-link>
@@ -58,7 +58,7 @@ import vLogo from './vLogo.vue';
   background-color: #c9d7e4;
   }
 
-.container {
+.header-container {
   display: flex;
   width: 1100px;
   margin-right: auto;
