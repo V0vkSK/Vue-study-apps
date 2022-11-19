@@ -40,7 +40,8 @@ import { mapState } from 'vuex';
             let tlc =[]
             this.movies.map(el => bylines.push(el.byline));
             tlc = bylines.map(el => el.toLowerCase());
-            let ans = tlc.map(el => el.indexOf(this.searchData))
+            let sd= this.searchData.toLowerCase()
+            let ans = tlc.map(el => el.indexOf(sd))
             let anss = ans.findIndex(el =>el >0)
             localStorage.name = this.movies[anss].byline
             
