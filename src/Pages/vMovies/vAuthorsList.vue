@@ -50,6 +50,11 @@ export default {
   width: 100%;
   
 }
+@media(max-width:855px){
+  .authors-container{
+    justify-content: center;
+  }
+}
 .author-container {
   position: relative;
   display: flex;

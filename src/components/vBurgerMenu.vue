@@ -3,7 +3,7 @@
     <div @click="openBurger" :class="{burger, close_burger}">
       <span></span>
     </div>
-    <nav v-if="this.isActiveBurgerMenu" class="menu-b__body">
+    <nav class="menu-b__body" :class="{isActiveBurgerMenu}">
                   
                   <ul class="menu-b__list">
                   
@@ -13,16 +13,16 @@
 
                     <li class="drop-container">
                       <a class="menu-b__link" :class="{arrow_up, arrow_down}"  href="#" @click="dropMenu">Movies reviews</a>
-                        <ul class="sub-menu" v-if="this.isActiveSubMenu">
+                        <ul class="sub-menu" :class="{isActiveSubMenu}">
                           <li class="sub-menu__item">
                             <RouterLink class="menu-b__link sub" @click="dropMenuClose" to="/movies">Movies</RouterLink>
                           </li>
-                          <div class="line"></div>
-                          <li class="sub-menu-list__item">
+                          <!-- <div class="line"></div> -->
+                          <li class="sub-menu__item">
                             <RouterLink class="menu-b__link sub" @click="dropMenuClose" to="/authors">Authors</RouterLink>
                           </li>
-                          <div class="line"></div>
-                          <li class="sub-menu-list__item">
+                          <!-- <div class="line"></div> -->
+                          <li class="sub-menu__item">
                             <RouterLink class="menu-b__link sub" @click="dropMenuClose" to="/search">Search</RouterLink>
                           </li>
                         </ul>
@@ -84,11 +84,13 @@
     pointer-events: all;
     display: flex;
     justify-content: center;
+    transform: translate(-100%,0px);
+    transition: all 0.3s ease;
     }
 		&__list {
       display: flex;
       flex-direction: column;
-      padding: 50px;
+      padding: 10px;
       align-items: center;
 		}
     &__list > li{
@@ -97,17 +99,26 @@
 
 		&__link {
       position: relative;
-      font-size: 40px;
+      transform: translate(50px,0px);
+      font-size: 30px;
       color: white;
       text-decoration: none;
 		}
 }
+// открытие меню 
+.menu-b__body.isActiveBurgerMenu{
+  transform: translate(0px,0px);
+}
 .menu-b__link .sub{
   position: absolute;
-  top: 20px;
-  left: 0;
-  font-size: 2rem;
+  top: 50px;
+  left: -25px;
+  
   padding: 10px;
+}
+.sub{
+  
+  font-size: 1.5rem;
 }
 .burger, .close_burger{
   z-index: 10;
@@ -164,6 +175,7 @@
   top: 50%;
   transform: rotate(135deg);
 }
+
 // Стрелка справа от выпадающего меню
 .arrow_down::after{
   content: "";
@@ -174,7 +186,7 @@
   height: 20px;
   border-top: 2px solid white;
   border-right: 2px solid white;
-  transform: rotate(135deg) translate(-50%,0px); 
+  transform: rotate(135deg) translate(-50%,0px); ;
   transition: all 0.3s ease 0s;
   border-left: 0px; 
   border-bottom: 0px;
@@ -202,15 +214,21 @@
   }
   .sub-menu{
     display: flex;
+    overflow: auto;
     flex-direction: column;
-    align-items: center;
-    transform: opacity(1);
+    // align-items: center;
+    transform: scale(0);
     transition: all 0.3s ease;
     position: absolute;
     top: 150%;
-    left: 30%;
+    left: 0%;
     padding: 10px 40px;
-    outline: 1px solid gray;
+    &__item{
+      margin-bottom: 25px;
+    }
+  }
+  .sub-menu.isActiveSubMenu{
+    transform: scale(1);
   }
  .line{
   display: block;

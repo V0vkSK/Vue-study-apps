@@ -40,30 +40,30 @@ export default {
   margin: 0 5px 15px 15px;
   width: 255px;
   box-shadow:  0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    &__link{
-       position: relative;
+  &__link{
+    position: relative;
     width: 100%;
     height: 100%;
     text-decoration: none;
     color: rgb(69, 67, 67);
     
-     &:hover .movie-container-shadow,
-      &:focus .movie-container-shadow{
-     transform: scale(1);
-     opacity: 0.3;
-     cursor: pointer;
+    &:hover .movie-container-shadow,
+    &:focus .movie-container-shadow{
+      transform: scale(1);
+      opacity: 0.3;
+      cursor: pointer;
     }}
-
+    
 		&__title {
       margin-bottom: 5px;
       align-items: center;
 		}
-
+    
 		&__img {
       margin-bottom: 5px;
       width: 100%;
 		}
-
+    
 		&__description {
       margin-bottom: 5px;
 		}
@@ -80,10 +80,15 @@ export default {
         color: rgb(0,191,255);
       }
     }
-}
-     .movie-container-shadow{
-        position: absolute;
-        top: 0;
+  }
+  @media(max-width:855px){
+    .movie-container{
+      width: 500px;
+    }
+  }
+  .movie-container-shadow{
+    position: absolute;
+    top: 0;
         left: 0;
         
         display: flex;

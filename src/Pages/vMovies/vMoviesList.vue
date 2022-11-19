@@ -40,6 +40,11 @@ li{
   width: 100%;
   
 }
+@media(max-width:855px){
+  .movies-container{
+    justify-content: center;
+  }
+}
 .btn-link{ display: none}
 @media (min-width:1800px){
   .btn-link{
