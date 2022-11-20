@@ -1,6 +1,6 @@
 <template>
   <div>
-    <iframe id="myFrame" class="frame" src="https://vovkcv.netlify.app" width="1100" height="1200" scrolling="no"/>
+    <iframe id="myFrame" class="frame" src="https://vsk-cv.onrender.com" width="1100" height="1200" scrolling="no"/>
     
   </div>
 </template>
