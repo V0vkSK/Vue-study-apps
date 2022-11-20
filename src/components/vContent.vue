@@ -25,7 +25,7 @@
     height: 100%;
     overflow: hidden;
     flex-wrap: wrap;
-    margin-top: 15px;
+    margin-top: 85px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 20px;

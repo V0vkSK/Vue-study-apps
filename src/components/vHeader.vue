@@ -60,6 +60,7 @@ import vBurgerMenu from './vBurgerMenu.vue'
 
 <style lang="scss" scoped>
 .header {
+  position: fixed;
   z-index: 10;
   display: flex;
   width: 100%;

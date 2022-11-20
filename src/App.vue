@@ -52,8 +52,12 @@ html,body{
   line-height: 1;
 
 }
+body._lock{
+  
+  overflow-y: hidden;
+}
 main{
-  min-height: 100vh;
+  min-height: 81vh;
 }
 
 *,
@@ -68,5 +72,8 @@ li{
 }
 router-link{
   text-decoration: none;
+}
+.header{
+  /* position: fixed; */
 }
 </style>

@@ -49,18 +49,21 @@
   methods: {
     openBurger() {
       return (
+        document.body.classList.toggle('_lock'),
         this.burger = !this.burger,
         this.close_burger = !this.close_burger,
         this.isActiveBurgerMenu = !this.isActiveBurgerMenu)
     },
     dropMenu() {
       return (
+        
         this.arrow_down = !this.arrow_down,
         this.arrow_up = !this.arrow_up,
         this.isActiveSubMenu = !this.isActiveSubMenu)
     },
     dropMenuClose(){
       return (
+        document.body.classList.toggle('_lock'),
         this.burger = !this.burger,
         this.close_burger = !this.close_burger,
         this.isActiveBurgerMenu = !this.isActiveBurgerMenu)
@@ -73,12 +76,12 @@
 .menu-b {
 
   &__body{
-    z-index: 10;
+    z-index: 100;
     position: absolute;
     top: 70px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #000;
     opacity: 0.9;
     pointer-events: all;
@@ -86,6 +89,7 @@
     justify-content: center;
     transform: translate(-100%,0px);
     transition: all 0.3s ease;
+    
     }
 		&__list {
       display: flex;
