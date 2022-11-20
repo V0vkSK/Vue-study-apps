@@ -94,7 +94,7 @@ import { mapState } from 'vuex';
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     font-size: 10px;
-
+    
 }
 .search-label{
     margin-top: -10px;
@@ -102,6 +102,7 @@ import { mapState } from 'vuex';
     color: darkgray;
     padding-left: 10px;
     width: 250px;
+    
 }
 .search-input {
 display: flex;
@@ -116,6 +117,7 @@ text-indent: 5px;
     display: flex;
     padding: 5px 20px;
     width: 80px;
+    margin-top: 20px;
     background-color: lightgray;
     border: 0;
     border-radius: 5px;
