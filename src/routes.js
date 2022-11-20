@@ -6,6 +6,7 @@ import vAuthorsList from "./Pages/vMovies/vAuthorsList";
 import vReviews from "./Pages/vMovies/vReviews";
 import vSearch from "./Pages/vMovies/vSearch";
 import vSearchResult from "./Pages/vMovies/vSearchResult";
+import vError from "./components/vError";
 import vNotFound from "./components/vNotFound";
 
 const router = createRouter({
@@ -15,6 +16,11 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: vHomePage,
+    },
+    {
+      path: "/error",
+      name: "error",
+      component: vError,
     },
     {
       path: "/cv",

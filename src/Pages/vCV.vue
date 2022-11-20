@@ -6,11 +6,6 @@
 </template>
 
 <script>
-window.onload = function () {
-  let frameElement = document.getElementById('myFrame');
-  let doc = frameElement.contentDocument;
-  doc.body.innerHTML = doc.body.innerHTML + '<style>.container { width: 45 %; }</style>'
-  }
   export default {
     name: "cCV"
   }
@@ -32,17 +27,12 @@ div{
   border:0;
   // padding-bottom: 50px;
 }
-@media(max-width:400px){
-  .frame{
-  transform: scale(0.35);
-  transform-origin: 0 0 ;
-}
-}
+
 @media(max-width:1100px){
   .frame{
-  transform: scale(0.9);
-  transform-origin: 0 0 ;
-}
+    transform: scale(0.9);
+    transform-origin: 0 0 ;
+  }
 }
 @media(max-width:960px){
   .frame{
@@ -58,7 +48,13 @@ div{
 }
 @media(max-width:550px){
   .frame{
-  transform: scale(0.4);
+    transform: scale(0.4);
+    transform-origin: 0 0 ;
+  }
+}
+@media(max-width:400px){
+  .frame{
+  transform: scale(0.35);
   transform-origin: 0 0 ;
 }
 }

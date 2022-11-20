@@ -1,7 +1,7 @@
 <template>
     <div class="modal-shadow" v-if="modalIsVisible">
         <form class="search-container" @submit="search">
-            <label class="search-label">Enter any letters of author`s name or whole the one`
+            <label class="search-label" id="search">Enter any letters of the author's name or the whole name of the author`
             <input autofocus maxlength="50" type="text" class="search-input" key="input" v-model="searchData"
             placeholder="Input author">
             </label>
@@ -12,19 +12,19 @@
 </template>
 
 <script>
-// import VAuthorItem from './vAuthorItem.vue';
-
 import { mapState } from 'vuex';
 
     export default {
     name: "vSearch",
     components: {
-    //   VAuthorItem  
+    
     },
     data() {
         return {
             searchData: "",
-            modalIsVisible: true
+            modalIsVisible: true,
+            errors: []
+
         };
     },
     props: {},
@@ -34,18 +34,34 @@ import { mapState } from 'vuex';
         ])
     },
     methods: {
-        search() {
-            this.modalIsVisible = false;
-            let bylines = []
-            let tlc =[]
-            this.movies.map(el => bylines.push(el.byline));
-            tlc = bylines.map(el => el.toLowerCase());
-            let sd= this.searchData.toLowerCase()
-            let ans = tlc.map(el => el.indexOf(sd))
-            let anss = ans.findIndex(el =>el >0)
-            localStorage.name = this.movies[anss].byline
+        search(evt) {
             
-            this.$router.push('/reviews')
+            if (this.searchData) {
+                console.log(this.searchData);
+                
+                this.modalIsVisible = false;
+                let bylines = []
+                let tlc = []
+                this.movies.map(el => bylines.push(el.byline));
+                tlc = bylines.map(el => el.toLowerCase());
+                let sd = this.searchData.toLowerCase()
+                let ans = tlc.map(el => el.indexOf(sd))
+                
+                let anss = ans.findIndex(el => el > 0)
+                if (anss > 0) {
+                    localStorage.name = this.movies[anss].byline
+                    this.$router.push('/reviews')
+                } else {
+                    evt.preventDefault();
+                    document.getElementById('search').className = "error"
+                    this.$router.push('/error')
+                }
+
+            } else {
+                this.errors = []
+                this.errors.push('Сannot be an empty field')
+                window.alert('Сannot be an empty field')               
+            }
         }
     },
     
@@ -106,5 +122,10 @@ text-indent: 5px;
     color: #fff;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);    
 }
+.error{
 
+}
+.error::placeholder{
+    color: red;
+}
 </style>

@@ -2,7 +2,7 @@
   <div class="home-page">
     <h1>Home Page</h1>
     <div class="home-container">
-      <p class="home-container__descr">In this application, the emphasis is on functionality and not on beauty and adaptability.</p>
+      <p class="home-container__descr">What have I done here?<br/> Some functionality for working with the backend, adaptive pages including a burger, etc., CSS3 animation.</p>
       
     </div>
   </div>
