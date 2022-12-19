@@ -6,7 +6,9 @@ import vAuthorsList from "./Pages/vMovies/vAuthorsList";
 import vReviews from "./Pages/vMovies/vReviews";
 import vSearch from "./Pages/vMovies/vSearch";
 import vSearchResult from "./Pages/vMovies/vSearchResult";
+import vPizza from "./Pages/vPizza/vPizza.vue";
 import vError from "./components/vError";
+import vTest from "./components/vTest";
 import vNotFound from "./components/vNotFound";
 
 const router = createRouter({
@@ -21,6 +23,11 @@ const router = createRouter({
       path: "/error",
       name: "error",
       component: vError,
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: vTest,
     },
     {
       path: "/cv",
@@ -47,6 +54,11 @@ const router = createRouter({
       path: "/search_res",
       name: "searchResult",
       component: vSearchResult,
+    },
+    {
+      path: "/pizza",
+      name: "pizza",
+      component: vPizza,
     },
     {
       path: "/authors",

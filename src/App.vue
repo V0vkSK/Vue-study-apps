@@ -1,11 +1,12 @@
 <template>
-      <div>
-        <vHeader class="header"/>  
-        <main>
-        <vContent/>
-        </main> 
-        <vFooter/>
-      </div>
+  <div>
+    <vHeader class="header" v-if="isPizzaActive" />
+    <vMenu class="header" v-if="!isPizzaActive" />
+    <main>
+      <vContent />
+    </main>
+    <vFooter />
+  </div>
 </template>
 
 <script>
@@ -24,19 +25,33 @@ if (isMobile) {
 //-----------------------------------
 
 import vHeader from './components/vHeader.vue';
+import vMenu from './Pages/vPizza/vMenu.vue';
 import vContent from './components/vContent.vue';
 import vFooter from './components/vFooter.vue';
+import { mapState } from 'vuex';
 
 export default {
   name: 'App',
   components: {
     vHeader,
     vContent,
-    vFooter
- },
+    vFooter,
+    vMenu
+  },
+  computed: {
+    ...mapState([
+      'isPizzaActive'
+    ])
+  },
+  methods: {
+
+  },
+  mounted() {
+
+  }
 }
 </script>
-<style> 
+<style>
 #app {
   position: relative;
   -webkit-font-smoothing: antialiased;
@@ -46,17 +61,22 @@ export default {
   color: #2c3e50;
   margin: 0;
 }
-html,body{
+
+html,
+body {
+  font-family: Open Sans;
   height: 100%;
   box-sizing: border-box;
   line-height: 1;
 
 }
-body._lock{
-  
+
+body._lock {
+
   overflow-y: hidden;
 }
-main{
+
+main {
   min-height: 81vh;
 }
 
@@ -67,13 +87,16 @@ main{
   margin: 0;
   padding: 0;
 }
-li{
+
+li {
   list-style: none;
 }
-router-link{
+
+router-link {
   text-decoration: none;
 }
-.header{
+
+.header {
   /* position: fixed; */
 }
 </style>

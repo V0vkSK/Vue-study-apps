@@ -2,7 +2,7 @@
   <div>
     <footer class="footer">
       <div class="footer-container">
-        <vLogo/>
+        <vLogo />
       </div>
     </footer>
 
@@ -11,12 +11,12 @@
 
 <script>
 import vLogo from './vLogo.vue'
-  export default {
+export default {
   name: 'vFooter',
   components: {
-      vLogo
-    }
+    vLogo
   }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -26,7 +26,7 @@ import vLogo from './vLogo.vue'
   width: 100%;
   min-height: 70px;
   background-color: #c9d7e4;
-  }
+}
 
 .footer-container {
   display: flex;
