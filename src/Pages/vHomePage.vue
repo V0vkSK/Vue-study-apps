@@ -5,6 +5,8 @@
       <p class="home-container__descr">What have I done here?<br /> Some functionality for working with the backend,
         adaptive pages including a burger, etc., CSS3 animation.</p>
       <b>I am finishing the store, so some functions do not work correctly or do not work at all</b>
+      <b>All written by hands without "Bootstrap, jQuery, TailWind" and other...</b>
+      <span>Although in general I can use them, but it's not cool ... <b>The code gets dirty</b></span>
 
     </div>
   </div>
@@ -29,13 +31,26 @@ export default {
   flex-direction: column;
   padding: 20px 10px;
   margin-top: 30px;
-  width: 400px;
+  width: 800px;
   height: fit-content;
   font-size: 30px;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   &__descr {
     padding: 10px;
+  }
+}
+
+b {
+  margin-top: 10px;
+}
+
+span {
+  margin-top: 30px;
+  color: red;
+
+  b {
+    color: blue;
   }
 }
 </style>
