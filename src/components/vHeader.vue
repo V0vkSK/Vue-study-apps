@@ -9,7 +9,7 @@
 
           <li><router-link class="menu__link" :to="{ name: 'home' }" @click="dropmenuClosed">Home</router-link></li>
 
-          <li><router-link class="menu__link" :to="{ name: 'test' }" @click="dropmenuClosed">Test</router-link></li>
+          <!-- <li><router-link class="menu__link" :to="{ name: 'test' }" @click="dropmenuClosed">Test</router-link></li> -->
 
           <li><router-link class="menu__link" :to="{ name: 'cv' }" @click="dropmenuClosed">My CV</router-link></li>
 
