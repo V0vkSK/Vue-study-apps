@@ -4,7 +4,8 @@
     <div class="home-container">
       <p class="home-container__descr">What have I done here?<br /> Some functionality for working with the backend,
         adaptive pages including a burger, etc., CSS3 animation.</p>
-      <b>I am finishing the store, so some functions do not work correctly or do not work at all</b>
+      <b>I am currently working on an online store project "Pizza-shop", so some functions do not work correctly or do
+        not work at all</b>
       <b>All written by hands without "Bootstrap, jQuery, TailWind" and other...</b>
       <span>Although in general I can use them, but it's not cool ... <b>The code gets dirty</b></span>
 
@@ -51,6 +52,12 @@ span {
 
   b {
     color: blue;
+  }
+}
+
+@media (max-width: 880px) {
+  .home-container {
+    width: 400px;
   }
 }
 </style>

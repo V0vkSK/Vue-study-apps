@@ -128,7 +128,7 @@ export default {
 }
 
 // PC
-@media (min-width: 767px) {
+@media (min-width: 880px) {
   .menu__list {
     display: flex;
   }
@@ -145,7 +145,7 @@ export default {
 }
 
 // Mobile
-@media (max-width:767px) {
+@media (max-width: 880px) {
   .menu__list {
     display: none;
   }
