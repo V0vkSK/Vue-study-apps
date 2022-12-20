@@ -13,7 +13,7 @@
         <router-link @click="PizzaDeactive" class="menu__link" :to="{ name: 'home' }">Home</router-link>
       </nav>
 
-      <vSearch />
+
 
       <div class="header-right">
         <div @click="drawerIsOpen" class="cart">
@@ -34,14 +34,14 @@
 import vBurgerMenu from '../../components/vBurgerMenu.vue'
 import { mapState } from 'vuex';
 import vDrawer from './vDrawer.vue';
-import vSearch from './vSearch.vue';
+
 
 export default {
   name: 'vMenu',
   components: {
     vDrawer,
     vBurgerMenu,
-    vSearch
+
   },
   data() {
     return {

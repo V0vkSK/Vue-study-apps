@@ -1,8 +1,15 @@
 <template>
-  <div class="cards">
-    <vToTop />
-    <vCard />
+  <div>
+    <div class="container-search">
+      <h1>All Pizzas</h1>
+      <vSearch class="" />
+    </div>
+    <div class="cards">
+      <vToTop />
 
+      <vCard />
+
+    </div>
   </div>
 </template>
 
@@ -10,6 +17,7 @@
 
 import vCard from './vCard.vue';
 import vToTop from '@/components/vToTop.vue';
+import vSearch from './vSearch.vue';
 
 
 
@@ -18,6 +26,8 @@ export default {
   components: {
     vCard,
     vToTop,
+    vSearch,
+
   },
   mounted() {
     this.$router.currentRoute.value.name === 'pizza' ? this.$store.dispatch('ACT_PIZZA_ACTIVE', false) : null;
@@ -30,6 +40,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container-search {
+  display: flex;
+  justify-content: space-between;
+}
+
 .cards {
   border: 1px solid rgb(238, 233, 233);
   border-radius: 10px;
@@ -37,5 +52,6 @@ export default {
   flex-wrap: wrap;
   width: 1100px;
   height: 100%;
+  margin-top: 30px;
 }
 </style>

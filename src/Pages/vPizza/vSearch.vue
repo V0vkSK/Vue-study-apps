@@ -40,7 +40,7 @@ export default {
     border-radius: 10px;
     border: 0;
     transition: all 0.3s ease-in-out;
-    box-shadow: 3px 3px 5px 1px grey;
+    box-shadow: -5px 5px 10px 1px rgb(195, 194, 194);
 
     &::placeholder {
       padding-left: 5px;
