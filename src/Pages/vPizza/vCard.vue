@@ -1,5 +1,7 @@
 <template>
-  <li class="card" v-for="pizza in pizzas" :key="pizza.id">
+
+  <li class="card" v-for="pizza in pizzas.filter(el => el.name.toLowerCase().includes(searchData.toLowerCase()))"
+    :key="pizza.id">
     <img v-if="!liked" @click="clickFavorite" class="fav-icon" src="../../components/assets/unliked.svg" alt="icon-fav">
     <img v-if="liked" @click="clickFavorite" class="fav-icon" src="../../components/assets/liked.svg" alt="icon-fav">
     <img :src="pizza.src" alt="pizza" class="card__img">
@@ -12,6 +14,7 @@
       <img src="../../components/assets/plus.svg" alt="plus-icon" class="plusBtn" @click="addPizzaToCart(pizza)">
     </div>
   </li>
+
 </template>
 
 <script>
@@ -29,7 +32,8 @@ export default {
     ...mapState([
       'pizzas',
       'pizzasInCart',
-      'total'
+      'total',
+      'searchData'
     ])
   },
   methods: {

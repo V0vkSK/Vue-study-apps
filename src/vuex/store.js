@@ -96,6 +96,9 @@ let store = new Vuex.Store({
     ACT_SET_TOTAL({ commit }, total) {
       commit("SET_TOTAL", total);
     },
+    ACT_SET_SEARCH({ commit }, total) {
+      commit("SET_SEARCH", total);
+    },
 
     async GET_MOVIES({ commit }) {
       try {
