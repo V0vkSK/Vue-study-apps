@@ -33,7 +33,7 @@ export default {
   margin-top: 30px;
   width: 800px;
   height: fit-content;
-  font-size: 30px;
+  font-size: 20px;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   &__descr {
