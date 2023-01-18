@@ -1,7 +1,7 @@
 <template>
   <div>
-    <vHeader class="header" v-if="isPizzaActive" />
-    <vMenu class="header" v-if="!isPizzaActive" />
+    <vHeader class="header" v-if="!isPizzaActive" />
+    <vMenu class="header" v-if="isPizzaActive" />
     <main>
       <vContent />
     </main>
@@ -40,14 +40,18 @@ export default {
   },
   computed: {
     ...mapState([
-      'isPizzaActive'
+      'isPizzaActive',
+      'pizzasInCart'
     ])
   },
   methods: {
 
   },
   mounted() {
-
+    this.$router.currentRoute.value.name === 'pizza' ? this.$store.dispatch('ACT_PIZZA_ACTIVE', true) : null;
+    this.$store.dispatch('GET_PIZZAS', '');
+    this.$store.dispatch('GET_PIZZAS_IN_CART', '')
+    localStorage.total = 0
   }
 }
 </script>

@@ -7,12 +7,12 @@
       <vSearch />
     </div>
 
+    <vToTop />
+
     <ul class="cards">
-      <vToTop />
-
       <vCard />
-
     </ul>
+
   </div>
 </template>
 
@@ -40,10 +40,15 @@ export default {
     ])
   },
   mounted() {
-    this.$router.currentRoute.value.name === 'pizza' ? this.$store.dispatch('ACT_PIZZA_ACTIVE', false) : null;
-    this.$store.dispatch('GET_PIZZAS', '');
-    this.$store.dispatch('GET_PIZZAS_IN_CART', '');
+    // this.$router.currentRoute.value.name === 'pizza' ? this.$store.dispatch('ACT_PIZZA_ACTIVE', false) : null;
 
+    this.$store.dispatch('ACT_PIZZA_ACTIVE', false)
+
+    // if (!this.pizzas) {
+    //   this.$store.dispatch('GET_PIZZAS', '').then
+    //   this.$store.dispatch('GET_PIZZAS_IN_CART', '').then
+    this.$store.dispatch('ACT_SET_TOTAL', +localStorage.total)
+    // }
   },
 
 }

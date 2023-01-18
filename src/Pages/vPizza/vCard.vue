@@ -12,6 +12,7 @@
       <pre>{{ pizza.price }} USD</pre>
 
       <img src="../../components/assets/plus.svg" alt="plus-icon" class="plusBtn" @click="addPizzaToCart(pizza)">
+
     </div>
   </li>
 
@@ -38,9 +39,6 @@ export default {
   },
   methods: {
     async addPizzaToCart(item) {
-      let index = this.pizzasInCart.findIndex((el) => el.name === item.name);
-      console.log(index);
-
 
       if (!this.pizzasInCart.find(el => el.name === item.name)) {
 
@@ -49,11 +47,12 @@ export default {
         this.$store.dispatch('ACT_SET_TOTAL', total)
         axios.post("https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart", item)
       } else {
+        // let pizzaInCart = this.pizzasInCart.filter((el) => el.name === item.name);
 
         item.qty++;
         const total = this.total + item.price
 
-        axios.put(`https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart/${this.item.id}`,
+        axios.put(`https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart/${item.id}`,
           {
             ...item,
             qty: item.qty,
@@ -66,7 +65,14 @@ export default {
   clickFavorite() {
     console.log(this.liked);
 
-    this.liked = true;
+    this.liked = !this.liked;
+  },
+  mounted() {
+    // if (!this.pizzas) {
+    //   this.$router.currentRoute.value.name === 'pizza' ? this.$store.dispatch('ACT_PIZZA_ACTIVE', false) : null;
+    //   this.$store.dispatch('GET_PIZZAS', '');
+    //   this.$store.dispatch('GET_PIZZAS_IN_CART', '');
+    // }
   }
 }
 </script>

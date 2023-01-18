@@ -69,12 +69,14 @@ export default {
       opacity: 0.5;
     }
 
-    &:focus {
+    &:focus,
+    &:valid {
       width: 500px;
       outline: none;
     }
 
-    &:focus .inputSearch {
+    &:focus,
+    &:valid .inputSearch {
       width: 300px;
       background-color: red;
     }

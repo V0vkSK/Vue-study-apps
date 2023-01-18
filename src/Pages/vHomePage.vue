@@ -6,8 +6,7 @@
         adaptive pages including a burger, etc., CSS3 animation.</p>
       <b>I am currently working on an online store project "Pizza-shop", so some functions do not work correctly or do
         not work at all</b>
-      <b>All written by hands without "Bootstrap, jQuery, TailWind" and other...</b>
-      <span>Although in general I can use them, but it's not cool ... <b>The code gets dirty</b></span>
+
 
     </div>
   </div>

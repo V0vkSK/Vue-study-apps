@@ -7,9 +7,9 @@
 
         <ul class="menu__list">
 
-          <li><router-link class="menu__link" :to="{ name: 'home' }" @click="dropmenuClosed">Home</router-link></li>
+          <li><router-link class="menu__link" :to="{ name: 'clock' }" @click="dropmenuClosed">Home</router-link></li>
 
-          <!-- <li><router-link class="menu__link" :to="{ name: 'test' }" @click="dropmenuClosed">Test</router-link></li> -->
+          <li><router-link class="menu__link" :to="{ name: 'about' }" @click="dropmenuClosed">About</router-link></li>
 
           <li><router-link class="menu__link" :to="{ name: 'cv' }" @click="dropmenuClosed">My CV</router-link></li>
 
@@ -56,7 +56,7 @@ export default {
       return this.isVisible = false
     },
     PizzaActive() {
-      this.$store.dispatch('ACT_PIZZA_ACTIVE', !this.isPizzaActive)
+      this.$store.dispatch('ACT_PIZZA_ACTIVE', true)
     },
 
   }

@@ -7,7 +7,7 @@
 
       <ul class="menu-b__list">
 
-        <li><router-link class="menu-b__link" :to="{ name: 'home' }" @click="dropMenuClose">Home</router-link></li>
+        <li><router-link class="menu-b__link" :to="{ name: 'about' }" @click="dropMenuClose">Home</router-link></li>
 
         <li><router-link class="menu-b__link" :to="{ name: 'cv' }" @click="dropMenuClose">My CV</router-link></li>
 

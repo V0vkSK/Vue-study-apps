@@ -6,7 +6,7 @@ let store = new Vuex.Store({
   state: {
     movies: {},
     author: {},
-    isPizzaActive: Boolean,
+    isPizzaActive: false,
     pizzas: {},
     pizzasInCart: {},
     total: 0,
@@ -95,7 +95,9 @@ let store = new Vuex.Store({
 
     ACT_SET_TOTAL({ commit }, total) {
       commit("SET_TOTAL", total);
+      localStorage.total = total;
     },
+
     ACT_SET_SEARCH({ commit }, total) {
       commit("SET_SEARCH", total);
     },

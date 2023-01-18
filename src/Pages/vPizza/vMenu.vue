@@ -1,32 +1,34 @@
 <template>
-  <header class="header">
-    <div class="header__container">
-      <div class="logo">
-        <img src="/img/Pizza3.jpeg" alt="pizza">
-        <div class="logo-text">
-          <h2>The best <span>Pizza</span>-shop</h2>
-          <p>Maiden with love for you...</p>
-        </div>
-      </div>
-
-      <nav class="menu">
-        <router-link @click="PizzaDeactive" class="menu__link" :to="{ name: 'home' }">Home</router-link>
-      </nav>
-
-
-
-      <div class="header-right">
-        <div @click="drawerIsOpen" class="cart">
-          <span>{{ total }} USD</span>
+  <div>
+    <header class="header">
+      <div class="header__container">
+        <div class="logo">
+          <img src="/img/Pizza3.jpeg" alt="pizza">
+          <div class="logo-text">
+            <h2>The best <span>Pizza</span>-shop</h2>
+            <p>Maiden with love for you...</p>
+          </div>
         </div>
 
-        <img src="../../components/assets/user.png" alt="user-icon" class="icon-user">
-      </div>
+        <nav class="menu">
+          <router-link @click="PizzaDeactive" class="menu__link" :to="{ name: 'about' }">Home</router-link>
+        </nav>
 
-    </div>
-    <vBurgerMenu class="burgerComp" />
-  </header>
-  <vDrawer v-if="isDrawerOpen" @closeDrawer="drawerClose" />
+
+
+        <div class="header-right">
+          <div @click="drawerIsOpen" class="cart">
+            <span>{{ total }} USD</span>
+          </div>
+
+          <img src="../../components/assets/user.png" alt="user-icon" class="icon-user">
+        </div>
+
+      </div>
+      <vBurgerMenu class="burgerComp" />
+    </header>
+    <vDrawer v-if="isDrawerOpen" @closeDrawer="drawerClose" />
+  </div>
 </template>
 
 <script>
@@ -57,7 +59,7 @@ export default {
   },
   methods: {
     PizzaDeactive() {
-      this.$store.dispatch('ACT_PIZZA_ACTIVE', !this.isPizzaActive)
+      this.$store.dispatch('ACT_PIZZA_ACTIVE', false)
     },
     drawerIsOpen() {
       this.isDrawerOpen = true
@@ -67,7 +69,10 @@ export default {
     }
   },
   mounted() {
-
+    this.$store.dispatch('ACT_SET_TOTAL', +localStorage.total)
+    this.$store.dispatch('GET_PIZZAS', '').then
+    this.$store.dispatch('GET_PIZZAS_IN_CART', '').then
+    this.$store.dispatch('ACT_SET_TOTAL', localStorage.total)
   }
 }
 </script>
