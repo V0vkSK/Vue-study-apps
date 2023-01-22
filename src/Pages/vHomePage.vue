@@ -1,11 +1,31 @@
 <template>
-  <div class="home-page">
-    <h1>Home Page</h1>
-    <div class="home-container">
-      <p class="home-container__descr">What have I done here?<br /> Some functionality for working with the backend,
-        adaptive pages including a burger, etc., CSS3 animation.</p>
-      <b>I am currently working on an online store project "Pizza-shop", so some functions do not work correctly or do
-        not work at all</b>
+  <div
+    class="home-page">
+    <h1>Home Page
+    </h1>
+    <div
+      class="home-container">
+      <p
+        class="home-container__descr">
+        What have I
+        done
+        here?<br />
+        Some
+        functionality
+        for working
+        with the
+        backend,
+        adaptive
+        pages
+        including a
+        burger,
+        etc., CSS3
+        animation.
+      </p>
+      <b>Pizza
+        internet-shop
+        is <span>Under
+          Construction</span></b>
 
 
     </div>
