@@ -5,20 +5,28 @@
         <div class="logo">
           <img src="/img/Pizza3.jpeg" alt="pizza">
           <div class="logo-text">
-            <h2>The best <span>Pizza</span>-shop</h2>
-            <p>Maiden with love for you...</p>
+            <h2>The
+              best
+              <span>Pizza</span>-shop
+            </h2>
+            <p>Maiden with love for you...
+            </p>
           </div>
         </div>
 
         <nav class="menu">
-          <router-link @click="PizzaDeactive" class="menu__link" :to="{ name: 'about' }">Home</router-link>
+          <router-link @click="PizzaDeactive" class="menu__link"
+            :to="{ name: 'clock' }">Clock</router-link>
         </nav>
 
 
 
         <div class="header-right">
           <div @click="drawerIsOpen" class="cart">
-            <span>{{ total }} USD</span>
+            <span>{{
+              total
+            }}
+              USD</span>
           </div>
 
           <img src="../../components/assets/user.png" alt="user-icon" class="icon-user">
@@ -60,6 +68,9 @@ export default {
   methods: {
     PizzaDeactive() {
       this.$store.dispatch('ACT_PIZZA_ACTIVE', false)
+      console.log(window.location.pathname);
+      // window.location.pathname = '/'
+
     },
     drawerIsOpen() {
       this.isDrawerOpen = true

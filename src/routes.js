@@ -15,11 +15,6 @@ import vNotFound from "./components/vNotFound";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    // {
-    //   path: "/",
-    //   name: "clock",
-    //   component: vClock,
-    // },
     {
       path: "/",
       name: "clock",
@@ -35,11 +30,6 @@ const router = createRouter({
       name: "error",
       component: vError,
     },
-    // {
-    //   path: "/test",
-    //   name: "test",
-    //   component: vTest,
-    // },
     {
       path: "/cv",
       name: "cv",

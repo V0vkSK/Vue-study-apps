@@ -58,6 +58,7 @@ export default {
 
   &__descr {
     padding: 10px;
+    line-height: 1.3;
   }
 }
 

@@ -7,17 +7,22 @@
 
         <ul class="menu__list">
 
-          <li><router-link class="menu__link" :to="{ name: 'clock' }" @click="dropmenuClosed">Home</router-link></li>
+          <li><router-link class="menu__link" :to="{ name: 'clock' }"
+              @click="dropmenuClosed">Clock</router-link></li>
 
-          <li><router-link class="menu__link" :to="{ name: 'about' }" @click="dropmenuClosed">About</router-link></li>
+          <li><router-link class="menu__link" :to="{ name: 'about' }"
+              @click="dropmenuClosed">About</router-link></li>
 
-          <li><router-link class="menu__link" :to="{ name: 'cv' }" @click="dropmenuClosed">My CV</router-link></li>
+          <li><router-link class="menu__link" :to="{ name: 'cv' }" @click="dropmenuClosed">My
+              CV</router-link></li>
 
           <li class="drop-container">
-            <button type="button" class="menu__link isActive" @click="dropmenu">Movies reviews</button>
+            <button type="button" class="menu__link isActive" @click="dropmenu">Movies
+              reviews</button>
             <vDropMenu class="dropmenu" :isVisible="isVisible" @isvisible="dropmenuClosed" />
           </li>
-          <li><router-link class="menu__link" :to="{ name: 'pizza' }" @click="PizzaActive">Pizza-shop</router-link></li>
+          <li><router-link class="menu__link" :to="{ name: 'pizza' }"
+              @click="PizzaActive">Pizza-shop</router-link></li>
         </ul>
 
       </nav>
@@ -57,8 +62,13 @@ export default {
     },
     PizzaActive() {
       this.$store.dispatch('ACT_PIZZA_ACTIVE', true)
+      // window.location.pathname = '/pizza'
     },
 
+  },
+  mounted() {
+    window.location.pathname == '/pizza' ? this.$store.dispatch('ACT_PIZZA_ACTIVE', true) : null;
+    console.log(window.location.pathname);
   }
 
 }

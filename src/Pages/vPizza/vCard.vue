@@ -1,9 +1,12 @@
 <template>
 
-  <li class="card" v-for="pizza in pizzas.filter(el => el.name.toLowerCase().includes(searchData.toLowerCase()))"
+  <li class="card"
+    v-for="pizza in pizzas.filter(el => el.name.toLowerCase().includes(searchData.toLowerCase()))"
     :key="pizza.id">
-    <img v-if="!liked" @click="clickFavorite" class="fav-icon" src="../../components/assets/unliked.svg" alt="icon-fav">
-    <img v-if="liked" @click="clickFavorite" class="fav-icon" src="../../components/assets/liked.svg" alt="icon-fav">
+    <img v-if="!liked" @click="clickFavorite" class="fav-icon"
+      src="../../components/assets/unliked.svg" alt="icon-fav">
+    <img v-if="liked" @click="clickFavorite" class="fav-icon"
+      src="../../components/assets/liked.svg" alt="icon-fav">
     <img :src="pizza.src" alt="pizza" class="card__img">
     <p class="name">{{ pizza.name }}</p>
     <div class="line"></div>
@@ -11,7 +14,8 @@
       <p class="price">Price:</p>
       <pre>{{ pizza.price }} USD</pre>
 
-      <img src="../../components/assets/plus.svg" alt="plus-icon" class="plusBtn" @click="addPizzaToCart(pizza)">
+      <img src="../../components/assets/plus.svg" alt="plus-icon" class="plusBtn"
+        @click="addPizzaToCart(pizza)">
 
     </div>
   </li>
@@ -68,11 +72,11 @@ export default {
     this.liked = !this.liked;
   },
   mounted() {
-    // if (!this.pizzas) {
-    //   this.$router.currentRoute.value.name === 'pizza' ? this.$store.dispatch('ACT_PIZZA_ACTIVE', false) : null;
-    //   this.$store.dispatch('GET_PIZZAS', '');
-    //   this.$store.dispatch('GET_PIZZAS_IN_CART', '');
-    // }
+    if (!this.pizzas) {
+      this.$router.currentRoute.value.name === 'pizza' ? this.$store.dispatch('ACT_PIZZA_ACTIVE', false) : null;
+      this.$store.dispatch('GET_PIZZAS', '');
+      this.$store.dispatch('GET_PIZZAS_IN_CART', '');
+    }
   }
 }
 </script>

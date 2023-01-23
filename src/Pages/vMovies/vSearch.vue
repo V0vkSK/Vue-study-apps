@@ -1,23 +1,50 @@
 <template>
-    <div class="modal-shadow" v-if="modalIsVisible">
-        <form class="search-container" @submit="search">
-            <label class="search-label" id="search">Enter any letters of the author's name or the whole name of the author`
-            <input autofocus maxlength="50" type="text" class="search-input" key="input" v-model="searchData"
-            placeholder="Input author">
+    <div class="modal-shadow"
+        v-if="modalIsVisible">
+        <form
+            class="search-container"
+            @submit="search">
+            <label
+                class="search-label"
+                id="search">Enter
+                any
+                letters
+                of
+                the
+                author's
+                name
+                or
+                the
+                whole
+                name
+                of
+                the
+                author`
+                <input
+                    autofocus
+                    maxlength="50"
+                    type="text"
+                    class="search-input"
+                    key="input"
+                    v-model="searchData"
+                    placeholder="Input author">
             </label>
-            <input type="submit" class="search-btn" value="Search">
+            <input
+                type="submit"
+                class="search-btn"
+                value="Search">
         </form>
-        
+
     </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
 
-    export default {
+export default {
     name: "vSearch",
     components: {
-    
+
     },
     data() {
         return {
@@ -35,10 +62,10 @@ import { mapState } from 'vuex';
     },
     methods: {
         search(evt) {
-            
+
             if (this.searchData) {
                 console.log(this.searchData);
-                
+
                 this.modalIsVisible = false;
                 let bylines = []
                 let tlc = []
@@ -46,7 +73,7 @@ import { mapState } from 'vuex';
                 tlc = bylines.map(el => el.toLowerCase());
                 let sd = this.searchData.toLowerCase()
                 let ans = tlc.map(el => el.indexOf(sd))
-                
+
                 let anss = ans.findIndex(el => el > 0)
                 if (anss > 0) {
                     localStorage.name = this.movies[anss].byline
@@ -60,11 +87,11 @@ import { mapState } from 'vuex';
             } else {
                 this.errors = []
                 this.errors.push('Сannot be an empty field')
-                window.alert('Сannot be an empty field')               
+                window.alert('Сannot be an empty field')
             }
         }
     },
-    
+
 }
 </script>
 
@@ -81,53 +108,63 @@ import { mapState } from 'vuex';
     justify-content: center;
 
 }
+
 .search-container {
     position: absolute;
     top: 25%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     display: flex;
-    justify-content: space-around;
-    width: 350px;
-    height: 100px;
+    justify-content: space-between;
+    width: 500px;
+    height: 150px;
+    border-radius: 10px;
     align-items: center;
     background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     font-size: 10px;
-    
+
 }
-.search-label{
+
+.search-label {
     margin-top: -10px;
-    font-size: 11px;
+    font-size: 1rem;
     color: darkgray;
-    padding-left: 10px;
-    width: 250px;
-    
+    padding-left: 40px;
+    width: 350px;
+    line-height: 130%;
+
 }
+
 .search-input {
-display: flex;
-margin-right: 15px;
-margin-top: 12px;
-width: 230px;
-height: 25px;	
-border-radius: 5px;
-text-indent: 5px;
+    display: flex;
+    margin-right: 15px;
+    margin-top: 12px;
+    padding: 17px;
+    font-size: 1rem;
+    width: 300px;
+    height: 25px;
+    border-radius: 5px;
+    text-indent: 5px;
 }
+
 .search-btn {
     display: flex;
-    padding: 5px 20px;
-    width: 80px;
+    padding: 10px 20px;
+    width: 100px;
     margin-top: 20px;
-    background-color: lightgray;
+    margin-right: 30px;
+    font-size: 1rem;
+    background-color: rgb(154, 150, 150);
     border: 0;
     border-radius: 5px;
     color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);    
+    box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, 0.2);
 }
-.error{
 
-}
-.error::placeholder{
+.error {}
+
+.error::placeholder {
     color: red;
 }
 </style>

@@ -1,9 +1,22 @@
 <template>
-  <form class="inputSearch">
+  <form
+    class="inputSearch">
 
-    <img width="40" src="../../components/assets/search.png" alt="search">
-    <input type="text" @input="changeData" v-model="searchResult" placeholder="Search...">
-    <img v-if="searchData" @click="clearData" class="clearBtn" width="30" src="../../components/assets/X.svg" alt="X">
+    <img width="40"
+      src="../../components/assets/search.png"
+      alt="search">
+    <input
+      type="text"
+      @input="changeData"
+      v-model="searchResult"
+      placeholder="Search...">
+    <img
+      v-if="searchData"
+      @click="clearData"
+      class="clearBtn"
+      width="30"
+      src="../../components/assets/X.svg"
+      alt="X">
 
   </form>
 </template>
@@ -38,51 +51,30 @@ export default {
 <style lang="scss" scoped>
 .inputSearch {
   display: flex;
-  width: 180px;
-
-  padding-right: 10px;
+  width: 240px;
+  margin-right: 10px;
+  padding-right: 15px;
   justify-content: end;
-  border: 1px solid lightgray;
+  outline: 1px solid lightgray;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
     cursor: pointer;
-    width: 300px;
-
-    input {
-      width: 240px;
-    }
   }
 
-
   input {
-    width: 120px;
+    width: 160px;
     padding: 5px;
     padding-right: 10px;
     outline: none;
     border: 0;
-    transition: all 0.3s ease-in-out;
 
     &::placeholder {
       padding-left: 5px;
       opacity: 0.5;
     }
-
-    &:focus,
-    &:valid {
-      width: 500px;
-      outline: none;
-    }
-
-    &:focus,
-    &:valid .inputSearch {
-      width: 300px;
-      background-color: red;
-    }
   }
-
-
 }
 
 .clearBtn {
