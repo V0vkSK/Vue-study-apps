@@ -8,15 +8,15 @@
 
 <script>
 
-    export default {
+export default {
     name: "vContent",
 }
 
 </script>
 
 <style lang="scss" scoped>
-.container-content{
-    
+.container-content {
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -29,23 +29,23 @@
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 20px;
-    
+
     @media (max-width:2500px) {
-        max-width:1100px
+        max-width: 1100px
     }
+
     @media (max-width:1100px) {
-            max-width:950px;
+        max-width: 950px;
     }
-// @media (max-width:900px) {
-//         max-width:767px
-// }
-// @media (max-width:767px) {
-//         max-width:none;
-//         margin: 0;
-//         padding: 0 auto;
-// }
+
+    // @media (max-width:900px) {
+    //         max-width:767px
+    // }
+    // @media (max-width:767px) {
+    //         max-width:none;
+    //         margin: 0;
+    //         padding: 0 auto;
+    // }
 }
-
-
 </style>
 

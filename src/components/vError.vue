@@ -1,19 +1,19 @@
 <template>
   <div>
-<h1>Error</h1>
-<p class="container">No author for your request</p>
-<RouterLink class="home" :to="{name:'home'}">Home</RouterLink>
+    <h1>Error</h1>
+    <p class="container">No author for your request</p>
+    <RouterLink class="home" :to="{ name: 'home' }">Home</RouterLink>
   </div>
 </template>
 
 <script>
-  export default {
-    name:'vError'
-  }
+export default {
+  name: 'vError'
+}
 </script>
 
 <style lang="scss" scoped>
-.container{
+.container {
   display: flex;
   flex-direction: column;
   width: 350px;
@@ -22,7 +22,8 @@
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.home{
+
+.home {
   display: flex;
   justify-content: center;
   margin-top: 20px;

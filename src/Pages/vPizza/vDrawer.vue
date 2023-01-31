@@ -4,8 +4,8 @@
       <div class="drawer">
         <div class="drawer-text">
           <h1>Cart</h1>
-          <img width="20" height="20" class="removeBtn" src="../../components/assets/X.svg" alt="remove"
-            @click="closeCart" />
+          <img width="20" height="20" class="removeBtn" src="../../components/assets/X.svg"
+            alt="remove" @click="closeCart" />
         </div>
         <ul class="cart-items">
           <li v-for="item in pizzasInCart" :key="item.id" className="cart-item">
@@ -113,7 +113,7 @@ export default {
   flex-direction: column;
   width: 420px;
   top: 87px;
-  height: 100%;
+
   right: 400px;
   border-radius: 10px;
   height: 100%;

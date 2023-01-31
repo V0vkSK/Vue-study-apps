@@ -7,26 +7,33 @@
 
       <ul class="menu-b__list">
 
-        <li><router-link class="menu-b__link" :to="{ name: 'about' }" @click="dropMenuClose">Home</router-link></li>
+        <li><router-link class="menu-b__link" :to="{ name: 'about' }"
+            @click="dropMenuClose">Home</router-link></li>
 
-        <li><router-link class="menu-b__link" :to="{ name: 'cv' }" @click="dropMenuClose">My CV</router-link></li>
+        <li><router-link class="menu-b__link" :to="{ name: 'cv' }" @click="dropMenuClose">My
+            CV</router-link></li>
 
-        <li><router-link class="menu-b__link" :to="{ name: 'pizza' }" @click="dropMenuClose">Online store "Pizza-shop"
+        <li><router-link class="menu-b__link" :to="{ name: 'pizza' }" @click="dropMenuClose">Online
+            store "Pizza-shop"
           </router-link></li>
 
         <li class="drop-container">
-          <a class="menu-b__link" :class="{ arrow_up, arrow_down }" href="#" @click="dropMenu">Movies reviews</a>
+          <a class="menu-b__link" :class="{ arrow_up, arrow_down }" href="#"
+            @click="dropMenu">Movies reviews</a>
           <ul class="sub-menu" :class="{ isActiveSubMenu }">
             <li class="sub-menu__item">
-              <RouterLink class="menu-b__link sub" @click="dropMenuClose" to="/movies">Movies</RouterLink>
+              <RouterLink class="menu-b__link sub" @click="dropMenuClose" to="/movies">Movies
+              </RouterLink>
             </li>
             <!-- <div class="line"></div> -->
             <li class="sub-menu__item">
-              <RouterLink class="menu-b__link sub" @click="dropMenuClose" to="/authors">Authors</RouterLink>
+              <RouterLink class="menu-b__link sub" @click="dropMenuClose" to="/authors">Authors
+              </RouterLink>
             </li>
             <!-- <div class="line"></div> -->
             <li class="sub-menu__item">
-              <RouterLink class="menu-b__link sub" @click="dropMenuClose" to="/search">Search</RouterLink>
+              <RouterLink class="menu-b__link sub" @click="dropMenuClose" to="/search">Search
+              </RouterLink>
             </li>
           </ul>
         </li>

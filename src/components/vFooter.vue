@@ -1,9 +1,7 @@
 <template>
   <div>
-    <footer
-      class="footer">
-      <div
-        class="footer-container">
+    <footer class="footer">
+      <div class="footer-container">
         <vLogo />
       </div>
     </footer>

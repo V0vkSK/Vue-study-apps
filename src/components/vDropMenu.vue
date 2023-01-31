@@ -1,9 +1,9 @@
 <template>
   <div class="drop-container" v-if="isVisible">
-    <router-link class="link" :to="{name:'movies'}" @click="dropMenuClose">Movies</router-link>
-    <router-link class="link" :to="{name:'authors'}" @click="dropMenuClose">Authors</router-link>
-    <router-link class="link" :to="{name:'search'}" @click="dropMenuClose">Search</router-link>
-    
+    <router-link class="link" :to="{ name: 'movies' }" @click="dropMenuClose">Movies</router-link>
+    <router-link class="link" :to="{ name: 'authors' }" @click="dropMenuClose">Authors</router-link>
+    <router-link class="link" :to="{ name: 'search' }" @click="dropMenuClose">Search</router-link>
+
 
   </div>
 </template>
@@ -11,15 +11,15 @@
 <script>
 import { mapGetters } from 'vuex';
 
-  
-  export default {
+
+export default {
   name: 'vDropMenu',
 
   data() {
     return {
     }
   },
-    
+
   props: {
     isVisible: {
       type: Boolean,
@@ -28,24 +28,24 @@ import { mapGetters } from 'vuex';
   },
 
   methods: {
-    dropMenuClose() { 
-       return this.$emit('isvisible', '');
+    dropMenuClose() {
+      return this.$emit('isvisible', '');
     },
     ...mapGetters([
       'AUTHORS'
     ])
   },
   mounted() {
-  
-   this.$store.dispatch('GET_MOVIES')  
+
+    this.$store.dispatch('GET_MOVIES')
     this.$store.dispatch('GET_AUTHOR')
-    }
+  }
 
 }
 </script>
 
 <style lang="scss" scoped>
-.link{
+.link {
   text-decoration: none;
   display: flex;
   width: 150px;
@@ -57,12 +57,14 @@ import { mapGetters } from 'vuex';
   background-color: #2071ce;
   color: #fff;
 
-  &:hover, &:focus {
-     background: #0a144e;
-  color: rgb(0, 191, 255);
+  &:hover,
+  &:focus {
+    background: #0a144e;
+    color: rgb(0, 191, 255);
   }
 }
-.drop-container{
+
+.drop-container {
   display: flex;
   flex-direction: column;
   z-index: 1;
@@ -71,6 +73,5 @@ import { mapGetters } from 'vuex';
   border: 0;
   border-radius: 5px;
   margin-top: 10px;
- }
- 
+}
 </style>
