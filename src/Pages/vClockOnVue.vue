@@ -103,10 +103,10 @@ export default {
 <style lang="scss" scoped>
 .container {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 100px;
   background: #2f363e;
 }
 

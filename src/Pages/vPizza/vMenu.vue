@@ -15,7 +15,7 @@
         </div>
 
         <nav class="menu">
-          <router-link @click="PizzaDeactive" class="menu__link"
+          <router-link class="menu__link" @click="PizzaDeactivate"
             :to="{ name: 'clock' }">Clock</router-link>
         </nav>
 
@@ -66,11 +66,10 @@ export default {
 
   },
   methods: {
-    PizzaDeactive() {
-      this.$store.dispatch('ACT_PIZZA_ACTIVE', false)
-      console.log(window.location.pathname);
-      // window.location.pathname = '/'
-
+    PizzaDeactivate() {
+      setTimeout(() => this.$store.dispatch('ACT_PIZZA_ACTIVE', false), 1)
+      this.searchResult = '';
+      this.$store.dispatch('ACT_SET_SEARCH', '');
     },
     drawerIsOpen() {
       this.isDrawerOpen = true

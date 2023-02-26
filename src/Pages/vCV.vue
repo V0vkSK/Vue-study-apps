@@ -1,6 +1,7 @@
 <template>
   <div>
-    <iframe id="myFrame" class="frame" src="https://vsk-cv.onrender.com" width="1100" height="1200" scrolling="no" />
+    <iframe id="myFrame" class="frame" src="https://vsk-cv.onrender.com" width="1100" height="1500"
+      scrolling="no" />
     <vToTop />
   </div>
 </template>
@@ -19,7 +20,7 @@ export default {
 div {
   position: relative;
   width: 1100px;
-  height: 1200px;
+  height: 1500px;
 }
 
 .frame {

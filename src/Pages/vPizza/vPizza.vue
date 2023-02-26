@@ -47,7 +47,7 @@ export default {
     // if (!this.pizzas) {
     //   this.$store.dispatch('GET_PIZZAS', '').then
     //   this.$store.dispatch('GET_PIZZAS_IN_CART', '').then
-    this.$store.dispatch('ACT_SET_TOTAL', +localStorage.total)
+    this.$store.dispatch('ACT_SET_TOTAL', + localStorage.total)
     // }
   },
 
