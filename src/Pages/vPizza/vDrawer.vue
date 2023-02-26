@@ -82,6 +82,7 @@ export default {
             ...item,
             qty: item.qty,
           }).then
+        console.log(item);
         this.$store.dispatch('ACT_CHANGE_QTY_PIZZA_IN_CART', item);
       } else {
         axios.delete(`https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart/${item.id}`).then

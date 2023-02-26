@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="ap">
-        <div id="ampm">AM</div>
+        <div id="ampm">{{ ap }}</div>
       </div>
     </div>
 
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+
 export default {
   name:
     'vClockOnVue',
@@ -51,8 +52,12 @@ export default {
     return {
       hours: '',
       minutes: '',
-      seconds: ''
+      seconds: '',
+      ap: ''
     }
+  },
+  computed: {
+
   },
   methods: {
     getTime() {
@@ -68,7 +73,7 @@ export default {
       this.hours = new Date().getHours();
       this.minutes = new Date().getMinutes();
       this.seconds = new Date().getSeconds();
-      // let ap = this.hours >= 12 ? 'PM' : 'AM';
+      this.ap = this.hours >= 12 ? 'PM' : 'AM';
 
 
       // convert to 12 hour format
@@ -94,7 +99,10 @@ export default {
   },
   created() {
     setInterval(this.getTime, 1000)
-  }
+  },
+  // unmounted: {
+
+  // }
 }
 
 
@@ -103,7 +111,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   padding-top: 100px;

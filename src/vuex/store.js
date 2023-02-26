@@ -37,6 +37,7 @@ let store = new Vuex.Store({
       });
     },
     CHANGE_QTY_PIZZA_IN_CART: (state, payload) => {
+      console.log(`pay ` + payload.qty);
       const index = state.pizzasInCart.findIndex(
         (el) => el.name === payload.name
       );

@@ -1,12 +1,11 @@
 <template>
-
   <li class="card"
     v-for="pizza in pizzas.filter(el => el.name.toLowerCase().includes(searchData.toLowerCase()))"
     :key="pizza.id">
     <img v-if="!liked" @click="clickFavorite" class="fav-icon"
       src="../../components/assets/unliked.svg" alt="icon-fav">
-    <img v-if="liked" @click="clickFavorite" class="fav-icon"
-      src="../../components/assets/liked.svg" alt="icon-fav">
+    <img v-if="liked" @click="clickFavorite" class="fav-icon" src="../../components/assets/liked.svg"
+      alt="icon-fav">
     <img :src="pizza.src" alt="pizza" class="card__img">
     <p class="name">{{ pizza.name }}</p>
     <div class="line"></div>
@@ -19,7 +18,6 @@
 
     </div>
   </li>
-
 </template>
 
 <script>
@@ -42,7 +40,7 @@ export default {
     ])
   },
   methods: {
-    async addPizzaToCart(item) {
+    addPizzaToCart(item) {
 
       if (!this.pizzasInCart.find(el => el.name === item.name)) {
 
@@ -51,18 +49,18 @@ export default {
         this.$store.dispatch('ACT_SET_TOTAL', total)
         axios.post("https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart", item)
       } else {
-        // let pizzaInCart = this.pizzasInCart.filter((el) => el.name === item.name);
+        let idInCart = this.pizzasInCart.filter((el) => el.name === item.name);
 
-        item.qty++;
+        idInCart[0].qty++;
         const total = this.total + item.price
 
-        axios.put(`https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart/${item.id}`,
+        axios.put(`https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart/${idInCart[0].id}`,
           {
             ...item,
-            qty: item.qty,
+            qty: idInCart[0].qty,
           }).then
-        this.$store.dispatch('ACT_CHANGE_QTY_PIZZA_IN_CART', item)
-        this.$store.dispatch('ACT_SET_TOTAL', total)
+        this.$store.dispatch('ACT_CHANGE_QTY_PIZZA_IN_CART', idInCart[0])
+        setTimeout(() => this.$store.dispatch('ACT_SET_TOTAL', total), 5)
       }
     }
   },

@@ -36,19 +36,27 @@ export default {
   computed: {
     ...mapState([
       'searchData',
-      'pizzas'
+      'pizzas',
+      'pizzasInCart'
     ])
   },
   mounted() {
+    console.log('mounted');
     // this.$router.currentRoute.value.name === 'pizza' ? this.$store.dispatch('ACT_PIZZA_ACTIVE', false) : null;
 
+    // Count total
+    const tot = this.pizzasInCart.reduce((acc, item) => { return acc + item.qty * item.price }, 0);
+    this.$store.dispatch('ACT_SET_TOTAL', tot)
+    localStorage.total = tot                              //push to localStorage
+
+    // Switch menu
     this.$store.dispatch('ACT_PIZZA_ACTIVE', false)
 
-    // if (!this.pizzas) {
-    //   this.$store.dispatch('GET_PIZZAS', '').then
-    //   this.$store.dispatch('GET_PIZZAS_IN_CART', '').then
-    this.$store.dispatch('ACT_SET_TOTAL', + localStorage.total)
-    // }
+    // Load pizzas
+    if (!this.pizzas) {
+      this.$store.dispatch('GET_PIZZAS', '').then
+      this.$store.dispatch('GET_PIZZAS_IN_CART', '').then
+    }
   },
 
 }
