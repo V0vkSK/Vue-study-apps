@@ -29,7 +29,11 @@
               USD</span>
           </div>
 
-          <img src="../../components/assets/user.png" alt="user-icon" class="icon-user">
+          <router-link to="/user" class="icon-user">
+            <img src="../../components/assets/user.png" alt="user-icon">
+          </router-link>
+
+
         </div>
 
       </div>

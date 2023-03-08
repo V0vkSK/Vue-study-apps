@@ -8,6 +8,7 @@ import vSearch from "./Pages/vMovies/vSearch";
 import vSearchResult from "./Pages/vMovies/vSearchResult";
 import vPizza from "./Pages/vPizza/vPizza.vue";
 import vError from "./components/vError";
+import vUser from "./components/vUser";
 // import vClock from "./Pages/vClock.vue";
 import vClockOnVue from "./Pages/vClockOnVue.vue";
 import vNotFound from "./components/vNotFound";
@@ -60,6 +61,11 @@ const router = createRouter({
       path: "/pizza",
       name: "pizza",
       component: vPizza,
+    },
+    {
+      path: "/user",
+      name: "user",
+      component: vUser,
     },
     {
       path: "/authors",

@@ -40,34 +40,33 @@ export default {
     ])
   },
   methods: {
-    addPizzaToCart(item) {
-
-      if (!this.pizzasInCart.find(el => el.name === item.name)) {
-
-        this.$store.dispatch('ACT_ADD_PIZZA_IN_CART', item)
-        const total = this.total + item.price
-        this.$store.dispatch('ACT_SET_TOTAL', total)
-        axios.post("https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart", item)
-      } else {
-        let idInCart = this.pizzasInCart.filter((el) => el.name === item.name);
-
-        idInCart[0].qty++;
-        const total = this.total + item.price
-
-        axios.put(`https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart/${idInCart[0].id}`,
-          {
+    async addPizzaToCart(item) {
+      try {
+        if (!this.pizzasInCart.some(el => el.name === item.name)) {
+          this.$store.dispatch('ACT_ADD_PIZZA_IN_CART', item)
+          const total = this.total + item.price
+          this.$store.dispatch('ACT_SET_TOTAL', total)
+          await axios.post("https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart", item)
+        } else {
+          let idInCart = this.pizzasInCart.filter((el) => el.name === item.name);
+          idInCart[0].qty++;
+          const total = this.total + item.price
+          await axios.put(`https://6387a9cfd9b24b1be3f6e05d.mockapi.io/cart/${idInCart[0].id}`, {
             ...item,
             qty: idInCart[0].qty,
-          }).then
-        this.$store.dispatch('ACT_CHANGE_QTY_PIZZA_IN_CART', idInCart[0])
-        setTimeout(() => this.$store.dispatch('ACT_SET_TOTAL', total), 5)
+          })
+          this.$store.dispatch('ACT_CHANGE_QTY_PIZZA_IN_CART', idInCart[0])
+          setTimeout(() => this.$store.dispatch('ACT_SET_TOTAL', total), 5)
+        }
+      } catch (error) {
+        console.error(error)
       }
-    }
-  },
-  clickFavorite() {
-    console.log(this.liked);
+    },
+    clickFavorite() {
+      console.log(this.liked);
 
-    this.liked = !this.liked;
+      this.liked = !this.liked;
+    },
   },
   mounted() {
     if (!this.pizzas) {
